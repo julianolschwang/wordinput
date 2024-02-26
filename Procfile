@@ -1,1 +1,1 @@
-web: gunicorn myflaskapp:app
+web: gunicorn webcsv:app
