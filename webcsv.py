@@ -39,20 +39,10 @@ def submit():
     roll3 = request.form.get('Roll3')
     pitch4 = request.form.get('Pitch4')
     roll4 = request.form.get('Roll4')
-
-    data.append({
-        'Classification' : classification,
-        'Pitch0' : pitch0,
-        'Roll0' : roll0,
-        'Pitch1' : pitch1,
-        'Roll1' : roll1,
-        'Pitch2' : pitch2,
-        'Roll2' : roll2,
-        'Pitch3' : pitch3,
-        'Roll3' : roll3,
-        'Pitch4' : pitch4,
-        'Roll4' : roll4
-    })
+    
+    with open('completedata.csv', 'a') as f:
+        f.write(f"{classification},{pitch0},{roll0},{pitch1},{roll1},{pitch2},{roll2},{pitch3},{roll3},{pitch4},{roll4}\n")
+        
     return redirect('/')
 
 @app.route('/')
