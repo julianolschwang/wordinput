@@ -57,7 +57,7 @@ def submit():
 
 @app.route('/')
 def read():
-    with open('/Users/julianolschwang/Desktop/dictionaryinput/webcsv/completedata.csv') as csvfile:
+    with open('completedata.csv') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             data.append(dict(row))
