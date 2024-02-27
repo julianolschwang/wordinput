@@ -28,17 +28,17 @@ def create():
     
 @app.route('/submit', methods=['POST'])
 def submit():
-    classification = request.form.get('Classification')
-    pitch0 = request.form.get('Pitch0')
-    roll0 = request.form.get('Roll0')
-    pitch1 = request.form.get('Pitch1')
-    roll1 = request.form.get('Roll1')
-    pitch2 = request.form.get('Pitch2')
-    roll2 = request.form.get('Roll2')
-    pitch3 = request.form.get('Pitch3')
-    roll3 = request.form.get('Roll3')
-    pitch4 = request.form.get('Pitch4')
-    roll4 = request.form.get('Roll4')
+    classification = int(request.args.get('Classification'))
+    pitch0 = int(request.args.get('Pitch0'))
+    roll0 = int(request.args.get('Roll0'))
+    pitch1 = int(request.args.get('Pitch1'))
+    roll1 = int(request.args.get('Roll1'))
+    pitch2 = int(request.args.get('Pitch2'))
+    roll2 = int(request.args.get('Roll2'))
+    pitch3 = int(request.args.get('Pitch3'))
+    roll3 = int(request.args.get('Roll3'))
+    pitch4 = int(request.args.get('Pitch4'))
+    roll4 = int(request.args.get('Roll4'))
     
     with open('completedata.csv', 'a') as f:
         f.write(f"{classification},{pitch0},{roll0},{pitch1},{roll1},{pitch2},{roll2},{pitch3},{roll3},{pitch4},{roll4}\n")
