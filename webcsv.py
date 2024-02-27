@@ -28,7 +28,7 @@ def create():
     
 @app.route('/submit', methods=['GET'])
 def submit():
-    classification = int(request.args.get('Classification'))
+    classification = str(request.args.get('Classification'))
     pitch0 = int(request.args.get('Pitch0'))
     roll0 = int(request.args.get('Roll0'))
     pitch1 = int(request.args.get('Pitch1'))
